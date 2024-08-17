@@ -7,6 +7,11 @@ https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/wsl.md
 
 # setup oh-my-posh
 
+```bash
+# official guides
+https://ohmyposh.dev/docs/
+```
+
 - wsl
 
 ```bash
