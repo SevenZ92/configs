@@ -1,8 +1,20 @@
 # setup gcm on wsl
 
 ```bash
-# follow inst below
+# official guides
 https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/wsl.md
+
+# download gcm on windows
+https://github.com/git-ecosystem/git-credential-manager/releases
+
+# setup on wsl
+git config --global credential.helper "/mnt/c/Program\ Files\ \(x86\)/Git\ Credential\ Manager/git-credential-manager.exe"
+git config --global credential.https://dev.azure.com.useHttpPath true  # for Azure Devops support only
+
+# setup env path on windows
+SETX WSLENV %WSLENV%:GIT_EXEC_PATH/wp
+
+# reload wsl
 ```
 
 # setup oh-my-posh
