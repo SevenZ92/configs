@@ -45,6 +45,12 @@ winget install JanDeDobbeleer.OhMyPosh -s winget
 # enable local scripts
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 
+# install auto-completion
+Install-Module -Name PSReadLine -Force
+
+# install terminal icons
+Install-Module -Name Terminal-Icons -Repository PSGallery -Force
+
 # open profile with notepad
 notepad $PROFILE
 # or open profile with visual studio code
@@ -53,5 +59,11 @@ notepad $PROFILE
 # add following inst
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/jandedobbeleer.omp.json" | Invoke-Expression
 
+Import-Module PSReadLine
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -EditMode Windows
+
+Import-Module Terminal-Icons
 # re-launch terminal
 ```
